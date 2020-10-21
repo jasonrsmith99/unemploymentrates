@@ -40,4 +40,8 @@ graph <- fredgraph %>%
 direct.label(graph, list(last.qp, cex = 1))
 ```
 
+<<<<<<< HEAD
 ![](README_files/figure-gfm/graphing-1.png)<!-- -->
+=======
+![](unemploymentrates_files/figure-gfm/graphing-1.png)<!-- -->
+>>>>>>> 45ea73f14ff90209d21eb82886f87fb7686af9c3
