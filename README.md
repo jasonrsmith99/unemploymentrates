@@ -19,7 +19,8 @@ fredgraph <- fredgraph %>%
          "White" = LNS14000003,
          "Asian" = LNU04032183) %>% 
   pivot_longer(cols = 2:6, names_to = "group", values_to = "val") %>% 
-  filter(year(DATE) != 2020)
+  filter(year(DATE) != 2020) %>% 
+  mutate(group = fct_relevel(group, "Aggregate", "African American", "Asian", "Hispanic", "White"))
 ```
 
 ``` r
@@ -27,8 +28,8 @@ graph <- fredgraph %>%
   ggplot(aes(x = DATE, y = val, color = group, linetype = group))+
   geom_line(size = 1.5)+
   scale_x_date(expand = expansion(add = c(0, 1250)))+
-  scale_color_manual(values = c("#377eb8", "#e41a1c", "#4daf4a", "#984ea3", "#ff7f00"))+
-  scale_linetype_manual(values = c("solid", "dotted", "solid", "solid", "solid"))+
+  scale_color_manual(values = c("#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00"))+
+  scale_linetype_manual(values = c("dotted", "solid", "solid", "solid", "solid"))+
   theme_economist()+
   labs(title = "Unemployment Rate 2000-2019",
        subtitle = "by race",
