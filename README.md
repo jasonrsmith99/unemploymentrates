@@ -6,7 +6,6 @@ library(tidyverse)
 library(lubridate)
 library(directlabels)
 library(ggthemes)
-library(here)
 ```
 
 ``` r

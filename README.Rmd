@@ -8,7 +8,6 @@ library(tidyverse)
 library(lubridate)
 library(directlabels)
 library(ggthemes)
-library(here)
 ```
 
 ```{r clean data, message=FALSE, warning=FALSE}
